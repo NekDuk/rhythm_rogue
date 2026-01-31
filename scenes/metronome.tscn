@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dx1l1jipar8a3"]
+
+[ext_resource type="Texture2D" uid="uid://cb0636nvgg6xv" path="res://assets/metronome/beat_4-4.png" id="1_h5lc0"]
+[ext_resource type="Script" uid="uid://bns76p71xqfkj" path="res://scripts/metronome.gd" id="2_kd2qf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd2qf"]
+atlas = ExtResource("1_h5lc0")
+region = Rect2(0, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwyvd"]
+atlas = ExtResource("1_h5lc0")
+region = Rect2(200, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plct4"]
+atlas = ExtResource("1_h5lc0")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phsm5"]
+atlas = ExtResource("1_h5lc0")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54fa4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd2qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwyvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plct4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phsm5")
+}],
+"loop": true,
+"name": &"4-4",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phsm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Metronome" type="AnimatedSprite2D" unique_id=623629922]
+sprite_frames = SubResource("SpriteFrames_54fa4")
+animation = &"4-4"
+frame_progress = 0.15924747
+script = ExtResource("2_kd2qf")

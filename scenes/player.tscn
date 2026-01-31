@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://cg4ug6gaue8al"]
 
+[ext_resource type="Script" uid="uid://dka1qb27wwsk" path="res://scripts/player_movement.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dx1l1jipar8a3" path="res://scenes/metronome.tscn" id="2_g2els"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u8vuu"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 
-[node name="Player" type="Node2D" unique_id=67726383]
+[node name="Player" type="CharacterBody2D" unique_id=1016763182]
+script = ExtResource("1_3vyb7")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2024028865]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=429436991]
+position = Vector2(0, 2.861023e-06)
+scale = Vector2(20.022678, 20.02268)
+mesh = SubResource("SphereMesh_u8vuu")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2033093460]
+[node name="Metronome" parent="." unique_id=623629922 instance=ExtResource("2_g2els")]
+scale = Vector2(0.05999999, 0.060000002)
+frame_progress = 0.6146002
+color = Color(49.283226, 0, 16.544722, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=696117375]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=696117375]
 shape = SubResource("CircleShape2D_u8vuu")
